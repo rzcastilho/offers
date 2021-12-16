@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+  eventstore:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: eventstore
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+  projection:
+    image: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: projection
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
