@@ -14,5 +14,10 @@ Example project showing how to properly implement a CQRS/ES pattern with Command
 ### Setup
 
 ```sh
-$ git clone 
+$ git clone https://github.com/rzcastilho/offers.git
+$ cd offers
+$ docker compose up -d
+$ mix deps.get
+$ mix event_store.init
+$ mix ecto.migrate
 ```
