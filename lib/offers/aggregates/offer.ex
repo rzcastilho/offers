@@ -1,7 +1,8 @@
 defmodule Offers.Aggregates.Offer do
   defstruct [
     :uuid,
-    :campus,
+    :partner,
+    :degree,
     :course,
     :modality,
     price: 0.0,
@@ -12,10 +13,10 @@ defmodule Offers.Aggregates.Offer do
   alias Offers.Events.{OfferActivated, OfferCreated, OfferDeactivated, OfferPriced}
   alias Offers.Aggregates.Offer
   
-  def execute(%Offer{uuid: nil}, %CreateOffer{uuid: uuid, campus: campus, course: course, modality: modality})
-  when uuid != nil and campus != nil and course != nil and modality != nil
+  def execute(%Offer{uuid: nil}, %CreateOffer{uuid: uuid, partner: partner, degree: degree, course: course, modality: modality})
+  when uuid != nil and partner != nil and degree != nil and course != nil and modality != nil
   do
-    %OfferCreated{uuid: uuid, campus: campus, course: course, modality: modality}
+    %OfferCreated{uuid: uuid, partner: partner, degree: degree, course: course, modality: modality}
   end
   
   def execute(%Offer{}, %CreateOffer{}) do
@@ -46,8 +47,8 @@ defmodule Offers.Aggregates.Offer do
     %OfferPriced{uuid: uuid, price: price}
   end
   
-  def apply(%Offer{}, %OfferCreated{uuid: uuid, campus: campus, course: course, modality: modality}) do
-    %Offer{uuid: uuid, campus: campus, course: course, modality: modality}
+  def apply(%Offer{}, %OfferCreated{uuid: uuid, partner: partner, degree: degree, course: course, modality: modality}) do
+    %Offer{uuid: uuid, partner: partner, degree: degree, course: course, modality: modality}
   end
   
   def apply(%Offer{} = offer, %OfferActivated{}) do

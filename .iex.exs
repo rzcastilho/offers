@@ -2,15 +2,16 @@ alias Offers.Commands.{ActivateOffer, CreateOffer, DeactivateOffer, PriceOffer}
 alias Offers.Runtime
 alias Offers.Aggregates.Offer
 alias Commanded.Aggregates.Aggregate
-#
+
 #uuid = UUID.uuid4()
 #
 #Runtime.dispatch(
 #  %CreateOffer{
 #    uuid: uuid,
-#    campus: "VINHEDO/SP",
-#    course: "Administração - Bacharelado",
-#    modality: "Semipresencial"
+#    partner: "University of Illinois",
+#    degree: "Master",
+#    course: "Computer Science",
+#    modality: "Online"
 #  }
 #)
 #
@@ -20,7 +21,7 @@ alias Commanded.Aggregates.Aggregate
 #Runtime.dispatch(
 #  %PriceOffer{
 #    uuid: uuid,
-#    price: 59.90
+#    price: 21_440.00
 #  }
 #)
 #
@@ -39,7 +40,7 @@ alias Commanded.Aggregates.Aggregate
 #Runtime.dispatch(
 #  %PriceOffer{
 #    uuid: uuid,
-#    price: 0.0
+#    price: 18_000.00
 #  }
 #)
 #

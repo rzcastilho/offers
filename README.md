@@ -1,6 +1,6 @@
 # Commanded
 
-## Offers `Example Domain`
+## Offers Domain Example
 
 ### DDD/CQRS/ES
 
@@ -19,5 +19,16 @@ $ cd offers
 $ docker compose up -d
 $ mix deps.get
 $ mix event_store.init
+$ mix ecto.migrate
+```
+
+### Reset
+
+```sh
+$ mix event_store.drop
+$ mix event_store.create
+$ mix event_store.init
+$ mix ecto.drop
+$ mix ecto.create
 $ mix ecto.migrate
 ```

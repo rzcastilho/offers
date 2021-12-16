@@ -1,7 +1,8 @@
 defmodule Offers.Commands.CreateOffer do
   defstruct [
     :uuid,
-    :campus,
+    :partner,
+    :degree,
     :course,
     :modality
   ] 
