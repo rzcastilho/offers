@@ -1,5 +1,8 @@
 import Config
 
+config :logger,
+  level: :info
+
 config :offers, ecto_repos: [Offers.Repo]
 
 config :offers, event_stores: [Offers.EventStore]

@@ -3,7 +3,9 @@ defmodule Offers.Projections.OfferProjection do
     application: Offers.Runtime,
     repo: Offers.Repo,
     name: "OfferProjection"
+
     
-  
+
+
 
   end

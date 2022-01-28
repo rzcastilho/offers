@@ -16,7 +16,7 @@ Example project showing how to properly implement a CQRS/ES pattern with Command
 ```sh
 $ git clone https://github.com/rzcastilho/offers.git
 $ cd offers
-$ docker compose up -d
+$ docker-compose up -d
 $ mix deps.get
 $ mix event_store.init
 $ mix ecto.migrate
@@ -25,10 +25,5 @@ $ mix ecto.migrate
 ### Reset
 
 ```sh
-$ mix event_store.drop
-$ mix event_store.create
-$ mix event_store.init
-$ mix ecto.drop
-$ mix ecto.create
-$ mix ecto.migrate
+$ ./reset.sh
 ```
